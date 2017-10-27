@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div style="text-align: center; margin-top: 20vh; font-size: 2.5rem; font-family: roboto">
+        Team 1:
+        <input type="text" id="t1">
+        </br>
+        Team 2:
+        <input type="text" id="t2">
+        </br>
+        <button id="predict" >
+            PREDICT
+        </button>
+        <p id="output" >
+        </p>
+    </div>
+</body>
+
+
+<script>
+ var predict = document.getElementById("predict");
+
+ var t1 = document.getElementById("t1");
+ var t2 = document.getElementById("t2");
+ var output = document.getElementById("output");
+
+ predict.onclick = function() {
+     var rand = Math.floor((Math.random() * 2) + 1);
+     console.log(rand);
+     if(rand === 1) {
+         output.textContent = t1.value + " will be victorious";
+     } else {
+         output.textContent = t2.value + " will be victorious";
+     }
+ };
+</script>
