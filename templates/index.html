@@ -31,7 +31,10 @@
      xmlHttp.onreadystatechange = function() {
          if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
              console.log(xmlHttp.responseText);
-             output.value = xmlHttp.responseText;
+             output.innerHTML = xmlHttp.responseText;
+         } else {
+             output.innerHTML = "VALUE ERROR";
+
          }
      };
      xmlHttp.open("GET", '/match?home=' + t1.value + '&away=' + t2.value, true); // true for asynchronous 
